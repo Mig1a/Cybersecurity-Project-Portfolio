@@ -1,0 +1,27 @@
+Network Intrusion Detection with Snort
+
+Overview: Deployed a signature-based NIDS using Snort and Docker to monitor for ICMP and HTTPS-based threats.
+
+Key Tasks:
+
+Installed and configured Snort on VM
+
+Wrote custom rules to detect ping and HTTPS traffic
+
+Validated alerts by simulating attacker traffic with Dockerized Pytbull
+
+Tools Used: Snort, Pytbull-ng, Docker, Vim
+
+Steps:
+
+I installed Docker and pulled pytbull-ng containers.
+
+I launched victim and attacker containers to simulate malicious traffic.
+
+I installed Snort and configured the network interface.
+
+I created custom rules in local.rules (e.g., ICMP detection).
+
+I validated the configuration using snort -c and started detection mode.
+
+I simulated HTTPS pings to google.com and observed Snort alerts in real time.
