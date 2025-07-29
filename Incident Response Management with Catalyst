@@ -1,0 +1,27 @@
+Incident Response Management with Catalyst
+
+Overview: Simulated full incident response workflows for phishing, malware, and brute-force attacks using Catalyst IR platform.
+
+Key Tasks:
+
+Created and managed incidents for different attack types
+
+Tracked observables (IPs, hashes) and analyzed IoCs via VirusTotal & AbuseIPDB
+
+Assigned tasks, added notes, and documented lessons learned
+
+Tools Used: Catalyst, VirusTotal, AbuseIPDB
+
+Steps:
+
+I installed Catalyst using the setup script and verified it was running at https://catalyst.localhost.
+
+I logged in with default admin credentials and created new incidents using the phishing, malware, and brute-force templates.
+
+I added observables (e.g., malicious IPs, hashes) to each case and marked their type.
+
+I cross-referenced observables on VirusTotal and AbuseIPDB, then added notes and risk ratings in Catalyst.
+
+I updated status fields, resolved tasks, and closed each incident.
+
+I documented lessons learned and classified each case as True Positive, False Positive, etc.
