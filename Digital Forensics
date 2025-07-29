@@ -1,0 +1,25 @@
+Digital Forensics
+
+Overview: Recovered deleted files and verified data integrity from a USB image using forensic tools.
+
+Key Tasks:
+
+Used FTK Imager to acquire and preview image
+
+Verified MD5/SHA1 hashes
+
+Recovered and reviewed deleted file contents in Autopsy
+
+Tools Used: FTK Imager, Autopsy
+
+Steps:
+
+I used FTK Imager to capture a forensic image of a flash drive.
+
+I calculated MD5 and SHA1 hash values for image verification.
+
+I imported the image into Autopsy and browsed the file system.
+
+I recovered deleted files and inspected metadata.
+
+I summarized findings for each recovered file including timestamps and potential evidence value.
