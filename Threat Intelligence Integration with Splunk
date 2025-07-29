@@ -1,0 +1,68 @@
+Threat Intelligence Integration with Splunk
+
+Overview: Ingested and correlated threat feeds with internal network logs using Splunk to identify suspicious activity.
+
+Key Tasks:
+
+Uploaded TOR threat feed and proxy logs (CSV)
+
+Used stats, mvcount, and table commands to identify matches
+
+Built dashboards and reports to visualize suspicious IP activity
+
+Tools Used: Splunk, CSV threat feeds, NetworkProxyLog
+
+Steps & Commands:
+
+Access Splunk:
+
+I opened the browser at http://127.0.0.1:8000
+
+I logged in using the provided credentials
+
+Upload Threat Feed (TorList.csv):
+
+I navigated to Settings > Add Data > Upload
+
+I selected TorList.csv and set the source type to csv
+
+I set the host field to Threat Feed and completed the upload
+
+Upload Proxy Logs (NetworkProxyLog01.csv):
+
+I repeated the same steps for NetworkProxyLog01.csv
+
+I confirmed both datasets were successfully ingested
+
+Run Correlation Search:
+
+(source="TorList.csv" OR source="NetworkProxyLog01.csv")
+| stats values(source) as sources by "IP Address"
+| where mvcount(sources) > 1
+
+Add Useful Fields:
+
+(source="TorList.csv" OR source="NetworkProxyLog01.csv")
+| stats values(source) as sources, values("Computer Name") as ComputerName, values("User Agent String") as UserAgent, values(Date) as Date, values(Time) as Time by "IP Address"
+| where mvcount(sources) > 1
+| table "IP Address", ComputerName, UserAgent, Date, Time
+
+Create Dashboard:
+
+I navigated to Dashboards > Create New Dashboard
+
+I created a dashboard titled Threat Intelligence Monitoring
+
+I added a new panel using the query above
+
+I changed the visualization to Statistics Table
+
+I set the time range to All Time and enabled auto-refresh every 1 minute
+
+Generate Report
+
+From the dashboard panel, I clicked the magnifying glass and selected "Convert to Report"
+
+I named the report (e.g., Tor IP Match Report) and saved it
+
+I viewed the report under the Reports tab
